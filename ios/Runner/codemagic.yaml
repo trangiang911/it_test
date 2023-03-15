@@ -1,0 +1,6 @@
+workflows:
+  test:
+    script:
+      - flutter pub get
+      - flutter build ios
+      - sh firebase_test_lab.sh
