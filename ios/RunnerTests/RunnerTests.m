@@ -1,4 +1,15 @@
-@import XCTest;
-@import integration_test;
+#import <XCTest/XCTest.h>
+#import <Flutter/Flutter.h>
 
-INTEGRATION_TEST_IOS_RUNNER(RunnerTests)
+@interface RunnerTests : XCTestCase
+@end
+
+@implementation RunnerTests
+
+- (void)testRunner {
+  // This is a placeholder test case that does nothing.
+  // You should replace this with your own test case(s).
+  XCTAssert(YES);
+}
+
+@end
