@@ -85,7 +85,7 @@ workflows:
           set -e
           echo $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS > ./gcloud_key_file.json          
           gcloud auth activate-service-account --key-file=gcloud_key_file.json
-          gcloud --quiet config set project $FIREBASE_PROJECT
+          gcloud --quiet config set project it-test-c2e57
 
       - keychain initialize
       - app-store-connect fetch-signing-files ${BUNDLE_ID} --create
