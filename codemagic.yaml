@@ -39,7 +39,7 @@ workflows:
 
           gcloud auth activate-service-account --key-file=gcloud_key_file.json
 
-          gcloud --quiet config set project $FIREBASE_PROJECT
+          gcloud --quiet config set project it-test-c2e57
 
           gcloud firebase test android run \
             --type instrumentation \
