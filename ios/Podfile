@@ -31,6 +31,13 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
+  # Firebase libraries
+  pod 'Firebase/Analytics'
+  pod 'Firebase/TestLab'
+
+  # Add this line
+  pod 'firebase_test'
+
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   target 'RunnerTests' do
     inherit! :search_paths
