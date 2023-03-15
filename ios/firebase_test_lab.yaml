@@ -1,7 +1,0 @@
-gcloud:
-  app: ./build/ios/iphoneos/Runner.app
-  device:
-    - model: iphone11
-      version: 15.2
-      locale: en_US
-      orientation: portrait
