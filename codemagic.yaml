@@ -76,7 +76,7 @@ workflows:
         - ios_credentials
         - gcloud_credentials
       vars:
-        FIREBASE_PROJECT: "it-test-c2e57"
+        FIREBASE_PROJECT: "IT test"
         BUNDLE_ID: "com.example.demo"
         TEST_BUNDLE_ID: "com.example.demo.uitests.xctrunner"
     scripts:
