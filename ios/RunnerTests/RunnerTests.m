@@ -2,14 +2,22 @@
 #import <Flutter/Flutter.h>
 
 @interface RunnerTests : XCTestCase
+
 @end
 
 @implementation RunnerTests
 
-- (void)testRunner {
-  // This is a placeholder test case that does nothing.
-  // You should replace this with your own test case(s).
-  XCTAssert(YES);
+- (void)setUp {
+  self.continueAfterFailure = NO;
+  [[[XCUIApplication alloc] init] launch];
+}
+
+- (void)testExample {
+  FlutterDriver *driver = [[FlutterDriver alloc] initWithHost:@"localhost" port:12345];
+  [driver waitUntilReady];
+  FlutterDriverResult *result = [driver checkHealth];
+  [driver close];
+  XCTAssertEqual(FlutterDriverSuccess, result.status);
 }
 
 @end
