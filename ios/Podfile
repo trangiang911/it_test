@@ -36,12 +36,6 @@ target 'Runner' do
     inherit! :search_paths
   end
 
-  pod 'Firebase/Analytics'
-  pod 'Firebase/TestLab'
-
-  # Add this line
-  pod 'firebase_test'
-
 end
 
 post_install do |installer|
