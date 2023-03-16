@@ -72,9 +72,6 @@ workflows:
     instance_type: mac_mini_m1
     environment:
       xcode: 14.2
-      groups:
-        - ios_credentials
-        - gcloud_credentials
       vars:
         FIREBASE_PROJECT: "flutter-integration-tests"
         BUNDLE_ID: "com.example.demo"
