@@ -12,9 +12,9 @@ void main() {
     ($) async {
       app.main();
       await $.pumpAndSettle();
-      await $.native.tap(Selector(text: 'Allow access to manage all files'));
+      await $.native.tap(Selector(text: 'Allow access to manage all files',));
       await $.native.pressBack();
-      await $.native.grantPermissionWhenInUse();
+      await $.pumpAndSettle();
       final fabFinder = find.byType(FloatingActionButton);
       await $.tap(fabFinder);
       await $.tap(fabFinder);
