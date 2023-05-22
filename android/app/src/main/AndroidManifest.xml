@@ -7,7 +7,8 @@
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!-- Without this folders will be inaccessible in Android-11 and above devices -->
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <!-- Without this entry storage-permission entry will not be visible under app-info permissions list Android-10 and below -->
     <uses-permission

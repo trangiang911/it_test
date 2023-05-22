@@ -1,5 +1,10 @@
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:permission_handler/permission_handler.dart';
+
+import 'json/data_platform.dart';
+import 'json/permission_services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +37,30 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  DataPlatformModel dataMappingPlatform = DataPlatformModel();
+  PermissionsService permissionsService = PermissionsService();
+
+  Future<void> initPermissionOnAndroid() async {
+    final androidDeviceInfo = await DeviceInfoPlugin().androidInfo;
+    Permission permissions = Permission.storage;
+    if (androidDeviceInfo.version.sdkInt >= 30) {
+      permissions = Permission.manageExternalStorage;
+    }
+    bool shouldShowRequestRationale =
+    await permissionsService.shouldShowRequestRationale(permissions);
+    if (!shouldShowRequestRationale) {
+      await permissionsService.request(permissions);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initPermissionOnAndroid();
+    dataMappingPlatform.createJsonFile();
+    dataMappingPlatform.readJsonFile();
+  }
 
   void _incrementCounter() {
     setState(() {
