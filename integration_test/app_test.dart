@@ -14,10 +14,11 @@ void main() {
     final fabFinder = find.byType(FloatingActionButton);
     expect(fabFinder, findsOneWidget);
     await tester.tap(fabFinder);
+    await tester.tap(fabFinder);
     await tester.pumpAndSettle(const Duration(seconds: 10));
 
     // kiểm tra xem giá trị của _counter có tăng lên không
-    final counterFinder = find.text('1');
+    final counterFinder = find.text('2');
     expect(counterFinder, findsOneWidget);
   });
 }
