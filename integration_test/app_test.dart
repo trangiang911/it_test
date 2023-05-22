@@ -19,8 +19,8 @@ void main() {
       await $.tap(fabFinder);
       await $.tap(fabFinder);
       await $.pumpAndSettle();
-      final counterFinder = find.text('2');
-      expect(counterFinder, findsOneWidget);
+      expect($('2'), findsOneWidget);
+      await $.pumpAndSettle();
     },
   );
 
