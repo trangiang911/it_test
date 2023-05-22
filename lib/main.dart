@@ -54,13 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  @override
-  void initState() {
-    super.initState();
-    initPermissionOnAndroid();
-    dataMappingPlatform.createJsonFile();
-    dataMappingPlatform.readJsonFile();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   initPermissionOnAndroid();
+  //   dataMappingPlatform.createJsonFile();
+  //   dataMappingPlatform.readJsonFile();
+  // }
 
   void _incrementCounter() {
     setState(() {
